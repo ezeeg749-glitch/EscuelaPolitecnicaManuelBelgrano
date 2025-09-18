@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuela Politécnica Manuel Belgrano</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2D4C3A 0%, #000000 100%);
+            color: #E2E8F0;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1, h2 {
+            color: #FFFFFF;
+        }
+        .page-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out;
+            overflow-y: auto; /* Permite el scroll */
+        }
+        .page-content.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #contenido-tecnico .section {
+            display: none;
+        }
+        #contenido-tecnico .section.active {
+            display: block;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav button {
+                margin-bottom: 0.5rem;
+                width: 90%; /* Asegura que los botones ocupen más ancho en móviles */
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <section id="pagina-inicio" class="page-content active flex flex-col justify-start items-center text-center p-8 min-h-screen">
+        
+        <div class="flex items-center justify-center mb-4 mt-8"> 
+            <img id="logo-inicio" src="Escudo_PMB.png" alt="Logo Escuela Politécnica Manuel Belgrano" class="h-24 mr-6">
+            <h1 class="text-5xl font-extrabold text-white">Escuela Politécnica<br>Manuel Belgrano</h1>
+        </div>
+        <p class="mt-2 mb-4 text-xl">Donde Nacen Las Buenas Ideas</p>
+        
+        <div class="mb-4">
+            <img src="fachada de la escuela.jpg" alt="Fachada de la Escuela Politécnica Manuel Belgrano" class="rounded-lg shadow-lg max-w-full h-auto">
+        </div>
+        <button id="boton-entrar" class="px-8 py-4 bg-green-500 text-white font-bold text-xl rounded-full hover:bg-green-600 transition duration-300 transform hover:scale-105">
+            Entrar a las Especialidades
+        </button>
+    </section>
+
+    <div id="contenido-tecnico" class="page-content w-full">
+        <header class="bg-gray-800 shadow-lg py-4 sticky top-0 z-10">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-center mb-4 relative">
+                    <img id="logo" src="Escudo_PMB.png" alt="Logo Escuela Politécnica Manuel Belgrano" class="h-16 mr-4">
+                    <h1 class="text-3xl font-bold text-white text-center">Escuela Politécnica<br>Manuel Belgrano</h1>
+                    <button id="boton-volver" class="absolute left-0 top-1/2 -translate-y-1/2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition duration-300">
+                        ← Volver
+                    </button>
+                </div>
+                <nav class="nav flex flex-wrap justify-center gap-2 md:space-x-4">
+                    <button class="section-btn px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300" data-section="automotores">Automotores</button>
+                    <button class="section-btn px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300" data-section="electronica">Electrónica</button>
+                    <button class="section-btn px-6 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition duration-300" data-section="electromecanica">Electromecánica</button>
+                    <button class="section-btn px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition duration-300" data-section="practicas">Prácticas Profesionales</button>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-4 py-8">
+            <section id="automotores" class="section">
+                <h2 class="text-2xl font-semibold mb-4 text-center">Galería de Automotores</h2>
+                <p class="mb-6 text-center">Haz clic en cualquier imagen para verla en grande y navegar por la galería.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <a href="imagenes/automotores/auto1.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto1.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto2.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto2.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto3.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto3.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto4.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto4.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto5.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto5.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto6.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto6.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto7.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto7.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto8.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto8.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto9.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto9.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto10.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto10.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto11.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto11.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto12.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto12.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto13.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto13.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto14.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto14.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto15.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto15.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto16.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto16.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto17.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto17.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto18.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto18.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto19.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto19.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto20.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto20.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto21.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto21.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto22.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto22.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto23.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto23.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto24.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto24.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto25.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto25.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto26.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto26.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto27.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto27.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto28.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto28.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto29.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto29.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto30.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto30.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto31.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto31.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto32.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto32.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto33.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto33.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto34.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto34.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto35.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto35.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto36.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto36.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/automotores/auto37.jpg" data-lightbox="automotores-gallery" data-title="Imagen de Automotores"><img src="imagenes/automotores/auto37.jpg" alt="Imagen de Automotores" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                </div>
+            </section>
+
+            <section id="electronica" class="section">
+                <h2 class="text-2xl font-semibold mb-4 text-center">Galería de Electrónica</h2>
+                <p class="mb-6 text-center">Haz clic en cualquier imagen para verla en grande y navegar por la galería.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <a href="imagenes/electronica/electro1.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro1.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro2.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro2.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro3.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro3.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro4.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro4.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro5.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro5.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro6.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro6.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro7.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro7.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro8.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro8.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro9.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro9.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro10.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro10.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro11.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro11.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro12.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro12.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro13.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro13.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro14.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro14.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro15.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro15.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro16.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro16.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro17.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro17.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro18.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro18.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro19.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro19.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro20.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro20.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electronica/electro21.jpg" data-lightbox="electronica-gallery" data-title="Imagen de Electrónica"><img src="imagenes/electronica/electro21.jpg" alt="Imagen de Electrónica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                </div>
+            </section>
+
+            <section id="electromecanica" class="section">
+                <h2 class="text-2xl font-semibold mb-4 text-center">Galería de Electromecánica</h2>
+                <p class="mb-6 text-center">Haz clic en cualquier imagen para verla en grande y navegar por la galería.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <a href="imagenes/electromecanica/mecanica1.jpg" data-lightbox="electromecanica-gallery" data-title="Imagen de Electromecánica"><img src="imagenes/electromecanica/mecanica1.jpg" alt="Imagen de Electromecánica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electromecanica/mecanica2.jpg" data-lightbox="electromecanica-gallery" data-title="Imagen de Electromecánica"><img src="imagenes/electromecanica/mecanica2.jpg" alt="Imagen de Electromecánica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electromecanica/mecanica3.jpg" data-lightbox="electromecanica-gallery" data-title="Imagen de Electromecánica"><img src="imagenes/electromecanica/mecanica3.jpg" alt="Imagen de Electromecánica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electromecanica/mecanica4.jpg" data-lightbox="electromecanica-gallery" data-title="Imagen de Electromecánica"><img src="imagenes/electromecanica/mecanica4.jpg" alt="Imagen de Electromecánica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electromecanica/mecanica5.jpg" data-lightbox="electromecanica-gallery" data-title="Imagen de Electromecánica"><img src="imagenes/electromecanica/mecanica5.jpg" alt="Imagen de Electromecánica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electromecanica/mecanica6.jpg" data-lightbox="electromecanica-gallery" data-title="Imagen de Electromecánica"><img src="imagenes/electromecanica/mecanica6.jpg" alt="Imagen de Electromecánica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electromecanica/mecanica7.jpg" data-lightbox="electromecanica-gallery" data-title="Imagen de Electromecánica"><img src="imagenes/electromecanica/mecanica7.jpg" alt="Imagen de Electromecánica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electromecanica/mecanica8.jpg" data-lightbox="electromecanica-gallery" data-title="Imagen de Electromecánica"><img src="imagenes/electromecanica/mecanica8.jpg" alt="Imagen de Electromecánica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electromecanica/mecanica9.jpg" data-lightbox="electromecanica-gallery" data-title="Imagen de Electromecánica"><img src="imagenes/electromecanica/mecanica9.jpg" alt="Imagen de Electromecánica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/electromecanica/mecanica10.jpg" data-lightbox="electromecanica-gallery" data-title="Imagen de Electromecánica"><img src="imagenes/electromecanica/mecanica10.jpg" alt="Imagen de Electromecánica" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                </div>
+            </section>
+            
+            <section id="practicas" class="section">
+                <h2 class="text-2xl font-semibold mb-4 text-center">Galería de Prácticas Profesionales</h2>
+                <p class="mb-6 text-center">Aquí se muestran los logos donde nuestros estudiantes aplican sus conocimientos en entornos laborales reales. Haz clic en cualquier imagen para verla en grande.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <a href="imagenes/practicas/practica1.jpeg" data-lightbox="practicas-gallery" data-title="Práctica Profesional"><img loading="lazy" src="imagenes/practicas/practica1.jpeg" alt="Imagen de Práctica Profesional" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/practicas/practica2.jpeg" data-lightbox="practicas-gallery" data-title="Práctica Profesional"><img loading="lazy" src="imagenes/practicas/practica2.jpeg" alt="Imagen de Práctica Profesional" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/practicas/practica3.jpeg" data-lightbox="practicas-gallery" data-title="Práctica Profesional"><img loading="lazy" src="imagenes/practicas/practica3.jpeg" alt="Imagen de Práctica Profesional" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/practicas/practica4.jpeg" data-lightbox="practicas-gallery" data-title="Práctica Profesional"><img loading="lazy" src="imagenes/practicas/practica4.jpeg" alt="Imagen de Práctica Profesional" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/practicas/practica5.jpeg" data-lightbox="practicas-gallery" data-title="Práctica Profesional"><img loading="lazy" src="imagenes/practicas/practica5.jpeg" alt="Imagen de Práctica Profesional" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/practicas/practica6.jpeg" data-lightbox="practicas-gallery" data-title="Práctica Profesional"><img loading="lazy" src="imagenes/practicas/practica6.jpeg" alt="Imagen de Práctica Profesional" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    
+                    <a href="imagenes/practicas/practica7.jpg" data-lightbox="practicas-gallery" data-title="Práctica Profesional"><img loading="lazy" src="imagenes/practicas/practica7.jpg" alt="Imagen de Práctica Profesional" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/practicas/practica8.jpg" data-lightbox="practicas-gallery" data-title="Práctica Profesional"><img loading="lazy" src="imagenes/practicas/practica8.jpg" alt="Imagen de Práctica Profesional" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/practicas/practica9.jpg" data-lightbox="practicas-gallery" data-title="Práctica Profesional"><img loading="lazy" src="imagenes/practicas/practica9.jpg" alt="Imagen de Práctica Profesional" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/practicas/practica10.jpg" data-lightbox="practicas-gallery" data-title="Práctica Profesional"><img loading="lazy" src="imagenes/practicas/practica10.jpg" alt="Imagen de Práctica Profesional" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/practicas/practica11.jpg" data-lightbox="practicas-gallery" data-title="Práctica Profesional"><img loading="lazy" src="imagenes/practicas/practica11.jpg" alt="Imagen de Práctica Profesional" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                    <a href="imagenes/practicas/practica12.jpg" data-lightbox="practicas-gallery" data-title="Práctica Profesional"><img loading="lazy" src="imagenes/practicas/practica12.jpg" alt="Imagen de Práctica Profesional" class="w-full h-auto object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity"></a>
+                </div>
+            </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+    <script>
+        const paginaInicio = document.getElementById('pagina-inicio');
+        const contenidoTecnico = document.getElementById('contenido-tecnico');
+        const botonEntrar = document.getElementById('boton-entrar');
+        const botonVolver = document.getElementById('boton-volver');
+
+        botonEntrar.addEventListener('click', () => {
+            paginaInicio.classList.remove('active');
+            contenidoTecnico.classList.add('active');
+            mostrarSeccion('automotores');
+            contenidoTecnico.scrollTo(0, 0); 
+        });
+
+        botonVolver.addEventListener('click', () => {
+            contenidoTecnico.classList.remove('active');
+            paginaInicio.classList.add('active');
+        });
+
+        const buttons = document.querySelectorAll('.section-btn');
+        const sections = document.querySelectorAll('#contenido-tecnico .section');
+
+        function mostrarSeccion(sectionId) {
+            sections.forEach(section => {
+                section.classList.remove('active', 'fade-in');
+                if (section.id === sectionId) {
+                    section.classList.add('active', 'fade-in');
+                }
+            });
+        }
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const sectionId = button.getAttribute('data-section');
+                mostrarSeccion(sectionId);
+                contenidoTecnico.scrollTo(0, 0);
+            });
+        });
+    </script>
+</body>
+</html>
